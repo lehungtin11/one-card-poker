@@ -21,8 +21,8 @@ html, .container, body {
     font-weight: 600;
 }
 
-.deck-table__item-1,
-.deck-table__item-2 {
+.deck-table__player-1,
+.deck-table__player-2 {
   float: left;
   width: 200px;
   height: 250px;
@@ -31,12 +31,12 @@ html, .container, body {
   text-align: center;
 }
 
-.deck-table__item-1 {
+.deck-table__player-1 {
     border-top-left-radius: 10px;
     border-left: 0px;
 }
 
-.deck-table__item-2 {
+.deck-table__player-2 {
     border-top-right-radius: 10px ;
     border-right: 0px;
 }

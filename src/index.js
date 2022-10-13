@@ -8,7 +8,7 @@ const dotenv = require('dotenv');
 // const MongoStore = require('connect-mongo');
 const hbs = require('express-handlebars');
 const path = require('path');
-// const methodOverride = require('method-override')
+const methodOverride = require('method-override')
 
 const route = require('./routes')
 const db = require('./config/db');
@@ -37,7 +37,7 @@ app.set("views", path.join(__dirname, "resources","views"));
 app.use(express.static(path.join(__dirname, "public"))); 
 
 // Overwrite method
-// app.use(methodOverride('_method'));
+app.use(methodOverride('_method'));
 
 // Connect database
 db.connect();
