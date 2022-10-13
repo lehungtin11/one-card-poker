@@ -1,7 +1,6 @@
 const myModel = require('../models/card')
 const myDeck = require('../models/deck')
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
 
 class CardControllers {
 
@@ -161,18 +160,6 @@ class CardControllers {
             deck_Id: deckId._id,
             error: `Error at: ${err}`
         }))
-    }
-
-    // [GET] /api/test
-    async test(req, res, next) {
-        await myDeck.findOne({_id:'6347bca6182297b1a928925b'}).populate('cards')
-        .then((data) => {
-            var a = data.cards
-            a = a.slice(0,2)
-            
-            res.json({data: a})
-        })
-        .catch((err) => new Error('Error at: ', err))
     }
 }
 
