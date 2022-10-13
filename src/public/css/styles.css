@@ -1,0 +1,89 @@
+html, .container, body {
+    background-color: #308834;
+}
+
+.title {
+    font-weight: 600;
+    background: -webkit-linear-gradient(#ff1d1c,  yellow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.deck-table {
+    background-color: #225f24;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    border-top: 0px;
+}
+
+.deck-table__header {
+    color: #fff;
+    font-weight: 600;
+}
+
+.deck-table__item-1,
+.deck-table__item-2 {
+  float: left;
+  width: 200px;
+  height: 250px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.deck-table__item-1 {
+    border-top-left-radius: 10px;
+    border-left: 0px;
+}
+
+.deck-table__item-2 {
+    border-top-right-radius: 10px ;
+    border-right: 0px;
+}
+
+img {
+  height: 200px;
+  display: inline-block;
+}
+
+.deck-cards {
+    color: #fff;
+    border-bottom: 1px solid #ddd;
+    font-weight: 600;
+    padding: 8px;
+}
+
+.deck-table__button {
+    text-align: center;
+}
+
+.deck-table__button button {
+    color: white;
+    border: 1px solid #fff;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 4px 8px;
+    width: 80px;
+    max-width: 80px;
+    font-weight: 600;
+}
+
+button:hover {
+    box-shadow: 0px 0px 12px  rgba(255, 255, 0, .5);
+}
+
+.deck-table__button-shuffle {
+    background-color: #008000;
+}
+
+.deck-table__button-draw {
+  background-color: #fdbe18;
+}
+
+.deck-table__button-reveal {
+    background-color: #272727;
+}
+
+.deck-table__button-reset {
+    background-color: #c41600;
+}

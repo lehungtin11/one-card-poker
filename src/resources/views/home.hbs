@@ -1,0 +1,123 @@
+    <div
+        style="color: #fff; font-size: 24px"
+        class="d-flex justify-content-center mt-4 title"
+    >
+        <span id="dice" class="me-2"><i class="bi bi-dice-1"></i></span>
+        <span class="title">ONE CARD POKER</span>
+    </div>
+    <div class="d-flex justify-content-center mt-2">
+        <div class="deck-table d-flex flex-column justify-content-center align-items-center">
+        
+            <div>
+                <div class="deck-table__item-1">
+                    <div class="deck-table__header">
+                        <i class="bi bi-person"></i>
+                        Player 1
+                        <div>
+                            CHIP:<span id="chip-value">5000</span>
+                            <i style="color:yellow" class="bi bi-coin"></i>
+                        </div>
+                    </div>
+                    <span class="card-holder" id="card1"></span>
+                </div>
+                <div class="deck-table__item-2">
+                    <div class="deck-table__header">
+                        <i class="bi bi-person"></i>
+                        Player 2
+                        <div>
+                            CHIP: <span id="chip-value">5000</span>
+                            <i style="color: yellow" class="bi bi-coin"></i>
+                        </div>
+                    </div>
+                    <span class="card-holder" id="card2"></span>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center w-100 deck-cards">
+                DECK CARDS 52
+            </div>
+            <div class="deck-table__button">
+                <button
+                    class="deck-table__button-shuffle mt-4 mb-4"
+                    onClick="play()"
+                >
+                    SHUFFLE
+                </button>
+                <button
+                    class="deck-table__button-draw mt-4 mb-4"
+                    onClick="play()"
+                >
+                    DRAW
+                </button>
+                <button
+                    class="deck-table__button-reveal mt-4 mb-4"
+                    onClick="play()"
+                >
+                    REVEAL
+                </button>
+                <button
+                    class="deck-table__button-reset mt-4 mb-4"
+                    onClick="play()"
+                >
+                    RESET
+                </button>
+            </div>
+        </div>
+    </div>
+<script>
+    const animationDice = document.querySelector('#dice').firstChild
+    // All cards:
+    var cards = [
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Playing_card_club_A.svg/1200px-Playing_card_club_A.svg.png',
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Playing_card_spade_A.svg/1200px-Playing_card_spade_A.svg.png',
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Playing_card_heart_A.svg/1200px-Playing_card_heart_A.svg.png',
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Playing_card_diamond_A.svg/1200px-Playing_card_diamond_A.svg.png',
+        'http://www.clipartbest.com/cliparts/9T4/ezn/9T4eznrjc.png',
+    ];
+
+    setInterval( () => {
+        animationDice.classList.toggle('bi-dice-2')
+        setTimeout(() => {
+            animationDice.classList.toggle('bi-dice-3')
+            setTimeout(() => {
+                animationDice.classList.toggle('bi-dice-4')
+            },500)
+        },500)
+        
+    }, 1200)
+
+
+function play() {
+  // get random position. Math.random returns float between 0 and 1
+  var p1 = Math.floor(Math.random() * cards.length); // will get integet between 0 and cards.length - 1
+  var p2 = Math.floor(Math.random() * cards.length);
+
+  // create new image element
+  var img1 = document.createElement('img');
+  var img2 = document.createElement('img');
+
+  // set image source to be same as selected card
+  img1.src = cards[p1];
+  img2.src = cards[p2];
+
+  // select cards holding elements
+  var holder1 = document.getElementById('card1');
+  var holder2 = document.getElementById('card2');
+
+  // clear images from previous game
+  holder1.innerHTML = "";
+  holder2.innerHTML = "";
+
+  // add images to it's holders
+  holder1.appendChild(img1);
+  holder2.appendChild(img2);
+
+  // game logic. Compare array key to see who wins
+  if (p1 > p2) {
+    alert('Player 1 is winner!');
+  } else if (p1 < p2) {
+    alert('Player 2 is winner!');
+  } else {
+    alert('No winner!');
+  }
+}
+</script>
