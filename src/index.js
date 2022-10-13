@@ -3,6 +3,7 @@ const app = express();
 const port = process.env.PORT ||3000;
 const http = require('http');
 const server = http.createServer(app);
+const dotenv = require('dotenv');
 // const session = require('express-session');
 // const MongoStore = require('connect-mongo');
 const hbs = require('express-handlebars');
